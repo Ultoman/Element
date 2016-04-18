@@ -2,7 +2,9 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class ExitTrigger : MonoBehaviour {
+public class WinTrigger : MonoBehaviour {
+
+	public FailureScript script;
 
 	public GameObject win;
 
@@ -20,7 +22,9 @@ public class ExitTrigger : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.gameObject.name == "Player")
+		if (other.gameObject.name == "Player") {
 			win.SetActive (true);
+			script.enabled = false;
+		}
 	}
 }
